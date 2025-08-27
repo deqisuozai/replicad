@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "调试核心包测试",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/packages/replicad/node_modules/.bin/vitest",
+      "args": ["--run", "--reporter=verbose"],
+      "cwd": "${workspaceFolder}/packages/replicad",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "调试 Studio 应用",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/packages/studio/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      },
+      "preLaunchTask": "启动 Studio"
+    },
+    {
+      "name": "调试文档应用",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3333",
+      "webRoot": "${workspaceFolder}/packages/replicad-docs/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      },
+      "preLaunchTask": "启动文档"
+    },
+    {
+      "name": "调试示例应用",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/packages/replicad-app-example/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "Replicad Sketcher": {
+    "prefix": "replicad-sketcher",
+    "body": [
+      "import { Sketcher } from 'replicad';",
+      "",
+      "// 创建草图绘制器",
+      "const sketcher = new Sketcher('XY');",
+      "",
+      "// 绘制基本形状",
+      "const shape = sketcher",
+      "  .movePointerTo([0, 0])",
+      "  .lineTo([10, 0])",
+      "  .lineTo([10, 10])",
+      "  .lineTo([0, 10])",
+      "  .close()",
+      "  .extrude(5);",
+      "",
+      "// 清理资源",
+      "sketcher.delete();",
+      "shape.delete();"
+    ],
+    "description": "创建 Replicad 草图绘制器并绘制基本形状"
+  },
+  "Replicad Face Sketcher": {
+    "prefix": "replicad-face-sketcher",
+    "body": [
+      "import { FaceSketcher } from 'replicad';",
+      "",
+      "// 创建面草图绘制器",
+      "const faceSketcher = new FaceSketcher('XY');",
+      "",
+      "// 在面上绘制",
+      "const face = faceSketcher",
+      "  .movePointerTo([0, 0])",
+      "  .lineTo([20, 0])",
+      "  .lineTo([20, 20])",
+      "  .lineTo([0, 20])",
+      "  .close()",
+      "  .face();",
+      "",
+      "// 清理资源",
+      "faceSketcher.delete();",
+      "face.delete();"
+    ],
+    "description": "创建 Replicad 面草图绘制器"
+  },
+  "Replicad 3D Shape": {
+    "prefix": "replicad-3d-shape",
+    "body": [
+      "import { makeBox, makeCylinder, makeSphere } from 'replicad';",
+      "",
+      "// 创建立方体",
+      "const box = makeBox(10, 10, 10);",
+      "",
+      "// 创建圆柱体",
+      "const cylinder = makeCylinder(5, 20);",
+      "",
+      "// 创建球体",
+      "const sphere = makeSphere(8);",
+      "",
+      "// 清理资源",
+      "box.delete();",
+      "cylinder.delete();",
+      "sphere.delete();"
+    ],
+    "description": "创建基本的 3D 形状"
+  },
+  "Replicad Test": {
+    "prefix": "replicad-test",
+    "body": [
+      "import { describe, it, expect } from 'vitest';",
+      "import { Sketcher } from 'replicad';",
+      "",
+      "describe('Replicad Sketcher', () => {",
+      "  it('应该能够创建基本的草图', () => {",
+      "    const sketcher = new Sketcher('XY');",
+      "    const shape = sketcher",
+      "      .movePointerTo([0, 0])",
+      "      .lineTo([10, 0])",
+      "      .lineTo([10, 10])",
+      "      .close()",
+      "      .extrude(5);",
+      "    ",
+      "    expect(shape).toBeDefined();",
+      "    ",
+      "    // 清理资源",
+      "    sketcher.delete();",
+      "    shape.delete();",
+      "  });",
+      "});"
+    ],
+    "description": "创建 Replicad 测试模板"
+  },
+  "React Component": {
+    "prefix": "react-component",
+    "body": [
+      "import React from 'react';",
+      "import styled from 'styled-components';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "  ${2:prop}: ${3:string};",
+      "}",
+      "",
+      "const Styled${1:ComponentName} = styled.div`",
+      "  ${4:// 样式定义}",
+      "`;",
+      "",
+      "export const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = ({",
+      "  ${2:prop}",
+      "}) => {",
+      "  return (",
+      "    <Styled${1:ComponentName}>",
+      "      {${2:prop}}",
+      "    </Styled${1:ComponentName}>",
+      "  );",
+      "};"
+    ],
+    "description": "创建 React 组件模板"
+  },
+  "TypeScript Interface": {
+    "prefix": "ts-interface",
+    "body": [
+      "interface ${1:InterfaceName} {",
+      "  ${2:property}: ${3:string};",
+      "  ${4:optionalProperty}?: ${5:number};",
+      "}"
+    ],
+    "description": "创建 TypeScript 接口"
+  },
+  "TypeScript Type": {
+    "prefix": "ts-type",
+    "body": [
+      "type ${1:TypeName} = ${2:string} | ${3:number};"
+    ],
+    "description": "创建 TypeScript 类型定义"
+  },
+  "Async Function": {
+    "prefix": "async-func",
+    "body": [
+      "const ${1:functionName} = async (${2:param}: ${3:string}): Promise<${4:void}> => {",
+      "  try {",
+      "    ${5:// 异步操作}",
+      "  } catch (error) {",
+      "    console.error('操作失败:', error);",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "创建异步函数"
+  }
+}

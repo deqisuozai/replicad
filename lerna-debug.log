@@ -1,0 +1,19 @@
+50 error Error: Command failed with exit code 1: pnpm install --lockfile-only --ignore-scripts
+50 error Scope: all 7 workspace projects
+50 error  WARN  `node_modules` is present. Lockfile only installation will make it out-of-date
+50 error Progress: resolved 1, reused 0, downloaded 0, added 0
+50 error  WARN  deprecated eslint@8.1.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+50 error packages/replicad                        |  WARN  deprecated rollup-plugin-ts@3.4.4
+50 error /home/replicad/packages/replicad:
+50 error  ERR_PNPM_NO_MATCHING_VERSION  No matching version found for replicad-opencascadejs@^0.20.1
+50 error
+50 error This error happened while installing a direct dependency of /home/replicad/packages/replicad
+50 error
+50 error The latest release of replicad-opencascadejs is "0.20.0".
+50 error
+50 error If you need the full list of all 22 published versions run "$ pnpm view replicad-opencascadejs versions".
+50 error     at makeError (/home/replicad/node_modules/.pnpm/execa@5.1.1/node_modules/execa/lib/error.js:60:11)
+50 error     at handlePromise (/home/replicad/node_modules/.pnpm/execa@5.1.1/node_modules/execa/index.js:118:26)
+50 error     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+50 error     at async VersionCommand.updatePackageVersions (/home/replicad/node_modules/.pnpm/lerna@7.1.5_@swc+core@1.3.27_encoding@0.1.13/node_modules/lerna/dist/index.js:8272:11)
+50 error     at async Promise.all (index 0)
